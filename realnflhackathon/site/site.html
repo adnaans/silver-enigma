@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="same">
+</p>
+<script>
+console.log("same");
+var text = '[
+  {
+    "season": number,
+    "week": number,
+    "teamId": "string",
+    "team": {
+     "abbr": "string",
+      "cityState": "string",
+      "fullName": "string",
+      "nick": "string",
+     }
+},
+    "teamPlayers": [
+      {
+        "nflId": number,
+        "displayName": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "positionGroup": "string",
+        "position": "string",
+        "jerseyNumber": number,
+        "height": "string",
+        "weight": number,
+      }
+    ]
+  }
+]}'
+
+
+var obj = JSON.parse(text);
+
+document.getElementById("same").innerHTML =
+obj.name + "<br>" +
+obj.street + "<br>" +
+obj.phone;
+</script>
+
+</body>
+</html>
