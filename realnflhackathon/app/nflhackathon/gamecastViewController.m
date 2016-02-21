@@ -8,6 +8,10 @@
 
 #import "gamecastViewController.h"
 #import <Firebase/Firebase.h>
+//#import <AFNetworking/AFURLRequestSerialization.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Foundation/Foundation.h>
+
 
 @interface gamecastViewController (){
     
@@ -80,6 +84,9 @@ int file=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
 //    miniUniform.alpha = 0;
     
     [[[[Firebase alloc] initWithUrl:@"https://nflhackathonthingy.firebaseio.com"] childByAppendingPath:@"file"] setValue:[NSNumber numberWithInt:file]];
@@ -95,8 +102,19 @@ int file=0;
     [self drawPath:x,y];
 
     if(_indexcheck == 0){
-        // use game 1 data
+        NSError *error;
+        NSString *fileName = @"%d.json",*file; // name of the PDF you are searching for
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:fileName options:0 error:&error];
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager POST:@"https://nflhackathonthingy.firebaseio.com/test" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
     }
+    
     else if (_indexcheck == 1){
         // use game 2 data
     }
