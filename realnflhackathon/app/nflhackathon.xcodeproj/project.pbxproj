@@ -18,6 +18,11 @@
 		0A6B26591C7916F800E5CE41 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B26581C7916F800E5CE41 /* AVFoundation.framework */; };
 		0A6B265B1C791E6000E5CE41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B265A1C791E6000E5CE41 /* MapKit.framework */; };
 		0A6B265E1C791F8600E5CE41 /* tableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B265D1C791F8600E5CE41 /* tableViewController.m */; };
+		0A7433981C7A1C8900FEDC7A /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7433931C7A1C8900FEDC7A /* SpeechKit.framework */; };
+		0A7433991C7A1C8900FEDC7A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7433941C7A1C8900FEDC7A /* AudioToolbox.framework */; };
+		0A74339A1C7A1C8900FEDC7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7433951C7A1C8900FEDC7A /* Foundation.framework */; };
+		0A74339B1C7A1C8900FEDC7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7433961C7A1C8900FEDC7A /* CoreGraphics.framework */; };
+		0A74339C1C7A1C8900FEDC7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7433971C7A1C8900FEDC7A /* UIKit.framework */; };
 		0A7FE7671C792B8200200691 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FE7661C792B8200200691 /* TableViewCell.m */; };
 		0A7FE76A1C7930C500200691 /* gamecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FE7691C7930C500200691 /* gamecastViewController.m */; };
 		0A7FE76C1C798A4C00200691 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7FE76B1C798A4C00200691 /* Twitter.framework */; };
@@ -63,6 +68,11 @@
 		0A6B265A1C791E6000E5CE41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A6B265C1C791F8600E5CE41 /* tableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewController.h; sourceTree = "<group>"; };
 		0A6B265D1C791F8600E5CE41 /* tableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableViewController.m; sourceTree = "<group>"; };
+		0A7433931C7A1C8900FEDC7A /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
+		0A7433941C7A1C8900FEDC7A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioToolbox.framework; sourceTree = "<group>"; };
+		0A7433951C7A1C8900FEDC7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation.framework; sourceTree = "<group>"; };
+		0A7433961C7A1C8900FEDC7A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreGraphics.framework; sourceTree = "<group>"; };
+		0A7433971C7A1C8900FEDC7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UIKit.framework; sourceTree = "<group>"; };
 		0A7FE7651C792B8200200691 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
 		0A7FE7661C792B8200200691 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
 		0A7FE7681C7930C500200691 /* gamecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gamecastViewController.h; sourceTree = "<group>"; };
@@ -81,12 +91,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A7FE7701C798A5D00200691 /* CoreGraphics.framework in Frameworks */,
+				0A74339C1C7A1C8900FEDC7A /* UIKit.framework in Frameworks */,
 				0A7FE76E1C798A5400200691 /* Foundation.framework in Frameworks */,
 				0A7FE76C1C798A4C00200691 /* Twitter.framework in Frameworks */,
 				0A6B265B1C791E6000E5CE41 /* MapKit.framework in Frameworks */,
 				0A6B26591C7916F800E5CE41 /* AVFoundation.framework in Frameworks */,
+				0A74339A1C7A1C8900FEDC7A /* Foundation.framework in Frameworks */,
+				0A7433991C7A1C8900FEDC7A /* AudioToolbox.framework in Frameworks */,
 				0A6B26571C7916F000E5CE41 /* CoreMotion.framework in Frameworks */,
 				9334AE8ADA1486A76D3DB19D /* libPods.a in Frameworks */,
+				0A74339B1C7A1C8900FEDC7A /* CoreGraphics.framework in Frameworks */,
+				0A7433981C7A1C8900FEDC7A /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +202,11 @@
 		C333355A4A4673F847D135D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A7433931C7A1C8900FEDC7A /* SpeechKit.framework */,
+				0A7433941C7A1C8900FEDC7A /* AudioToolbox.framework */,
+				0A7433951C7A1C8900FEDC7A /* Foundation.framework */,
+				0A7433961C7A1C8900FEDC7A /* CoreGraphics.framework */,
+				0A7433971C7A1C8900FEDC7A /* UIKit.framework */,
 				0A7FE76F1C798A5D00200691 /* CoreGraphics.framework */,
 				0A7FE76D1C798A5400200691 /* Foundation.framework */,
 				0A7FE76B1C798A4C00200691 /* Twitter.framework */,
@@ -525,6 +545,10 @@
 			baseConfigurationReference = B6AF7F15689BC34A13726A6F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = nflhackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.nflhackathon;
@@ -537,6 +561,10 @@
 			baseConfigurationReference = C0783D067BCDD3C8E7AC1C3B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = nflhackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kfang.nflhackathon;
