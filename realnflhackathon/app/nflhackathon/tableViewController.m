@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    tableData= [[NSArray alloc] initWithObjects:@"",@"", nil];
+    tableData= [[NSArray alloc] initWithObjects:@"",@"",@"", nil];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 //        [[[[Firebase alloc] initWithUrl:@"https:/ /nflhackathonthing.firebaseio.com"] childByAppendingPath:@"concussion"] setValue:[NSNumber numberWithInt:concussion]];
