@@ -9,6 +9,7 @@
 #import "tableViewController.h"
 #import "TableViewCell.h"
 #import "gameCastViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface tableViewController(){
     
@@ -23,6 +24,7 @@
 @synthesize indexcheck;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     tableData= [[NSArray alloc] initWithObjects:@"",@"", nil];
     self.tableView.delegate = self;
@@ -109,6 +111,9 @@
     NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
     indexcheck = selectedIndexPath.row + 1;
     NSLog(@"%d",indexcheck);
+    [[[[Firebase alloc] initWithUrl:@"https://nflhackathonthingy.firebaseio.com/"] childByAppendingPath:@"gamenumber"] setValue:[NSNumber numberWithInt:indexcheck]];
+
+    
 }
 
 

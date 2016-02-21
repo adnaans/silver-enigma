@@ -1,0 +1,12 @@
+from firebase import firebase
+import pdb
+import time
+
+
+firebase = firebase.FirebaseApplication('https://nflhackathonthingy.firebaseio.com', None)
+result = firebase.get('/jsonfiles', None)
+print result
+{'1': 'John Doe', '2': 'Jane Doe'}
+
+
+print result

@@ -10,6 +10,26 @@ var myFirebaseRef = new Firebase("https://nflhackathonthingy.firebaseio.com/");
 
 int filenumber = 0;
 
+$.ajax({
+      type: 'GET',
+      url: 'https://nflhackathonthingy.firebaseio.com/.json',
+      crossDomain: true,
+      async: false,
+      jsonpCallback: 'jsonpCallback',
+      dataType: 'jsonp',
+      contentType: 'application/json',
+      success: function(data) {
+          // console.log(data);
+            // var item = data.product_composite_response.items[0];
+          
+    });
+  }
+});
+
+myFirebaseRef.child("gamenumber").on("value", function(snapshot){
+  
+}
+
 myFirebaseRef.child("file").on("value", function(snapshot){
 	myFirebaseRef.child("json").on("value", function(snapshot){
 		$.getJSON( "/Users/Downloads/game1plays/" + filenumber + ".json", function( data ) {
@@ -22,5 +42,5 @@ myFirebaseRef.child("file").on("value", function(snapshot){
        		html: items.join( "" )
    			}).appendTo( "body" );
 		});
-	}
-}
+	});
+});
