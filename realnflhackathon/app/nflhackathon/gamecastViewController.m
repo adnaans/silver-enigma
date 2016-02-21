@@ -81,11 +81,18 @@ int file=0;
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    miniUniform.alpha = 0;
-
-    [[[[Firebase alloc] initWithUrl:@"https://nflhackathonthingy.firebaseio.com"] childByAppendingPath:@"file"] setValue:[NSNumber numberWithInt:file]];
-    int numberofplayer=11;
     
-    [self drawPath];
+    [[[[Firebase alloc] initWithUrl:@"https://nflhackathonthingy.firebaseio.com"] childByAppendingPath:@"file"] setValue:[NSNumber numberWithInt:file]];
+    Firebase *myRootRef;
+    
+    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+    }];
+    
+    int numberofplayer=11;
+    float x, y;
+    
+    [self drawPath:x,y];
 
     if(_indexcheck == 0){
         // use game 1 data
@@ -107,9 +114,9 @@ int file=0;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//:(CGFloat)_xlocation,ylocation
 //put after drawPath when ir works
-- (void)drawPath{
+- (void)drawPath:(CGFloat)_xlocation,ylocation
+{
 
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(_width/4, startingline)];
@@ -122,13 +129,12 @@ int file=0;
     shapeLayer.lineWidth = 2.0;
     shapeLayer.fillColor = [[UIColor clearColor] CGColor];
 
-    UIImage *image = [[]
-    UIImageView* miniJersey = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    miniJersey.image = image;
-    [self.view addSubview:capturedView];
-    
-
     [self.view.layer addSublayer:shapeLayer];
+    
+    UIImage* image = [UIImage imageNamed:@"miniUniform"];
+    UIImageView* miniJersey = [[UIImageView alloc] initWithFrame:CGRectMake(50, 100.0, 50, 30)];
+    miniJersey.image = image;
+    [self.view addSubview:miniJersey];
 }
 /*
 #pragma mark - Navigation
