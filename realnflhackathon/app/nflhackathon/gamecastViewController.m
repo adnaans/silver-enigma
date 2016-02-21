@@ -114,11 +114,13 @@ int file=0;
 //            float y = [snapshot.value[@"y"] floatValue];
              //         time.text = (@"%@", snapshot.value[@"time"]);
 //            ref1 = [snapshot.value[@"nflID"] readDataToEndOfFile];
-             NSMutableArray *nflIDCollection = [[NSMutableArray alloc] init];
+             NSMutableArray *nflIDCollection = [[NSMutableArray alloc] init];NSError *jsonError = nil;
+             
             for(int index=0;index <= 11; index++){
-                [nflIDCollection addObject:snapshot.value[@"nflID"]];
+                int nflIDint = [[NSNumber numberWithUnsignedChar:"@nflID"] intValue];
+                [nflIDCollection addObject:snapshot.value[nflIDint]];
 
-                nflIDCollection[index] = snapshot.value[@"nflID"];
+                nflIDCollection[index] = snapshot.value[nflIDint];
             [[ref queryOrderedByChild:@"team1"]observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot){
                 for(int index=0;index<=nflIDCollection.count;index++){
                     snapshot.value[@"nflID"] = nflIDCollection[index];
@@ -283,6 +285,11 @@ int count;
         count = 1;
 //        [self capture];
     }
+}
+-(void)meth2:(NSNumber **)number {
+    int myInt = [*number intValue];
+    // do stuff with myInt
+    *number = [NSNumber numberWithInt:myInt];
 }
 
 
