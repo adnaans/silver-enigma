@@ -12,4 +12,6 @@
 @interface gamecastViewController : UIViewController
 @property (strong, nonatomic) tableViewController *indexcheck;
 
+@property (weak) IBOutlet NSInteger *file;
+
 @end

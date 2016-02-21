@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhb-67-gPU">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhb-67-gPU">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="apt-Nf-6qb">
+                                    <navigationItem id="apt-Nf-6qb">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="kcQ-kb-tDK">
                                             <connections>
                                                 <segue destination="84x-it-Txb" kind="show" id="HAq-Qf-Af6"/>
@@ -29,20 +29,46 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-aP-j5G">
-                                <rect key="frame" x="-2" y="64" width="603" height="537"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O69-kQ-AWl">
+                                <rect key="frame" x="-1" y="64" width="601" height="537"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4BA-RO-t5w">
+                                        <rect key="frame" x="0.0" y="494" width="601" height="44"/>
+                                        <items>
+                                            <barButtonItem id="S6T-p5-gZV"/>
+                                            <barButtonItem width="69" style="plain" systemItem="fixedSpace" id="wE2-ib-mjC">
+                                                <connections>
+                                                    <action selector="last:" destination="cSW-Ep-mxb" id="iqT-iL-xlG"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Previous" id="RVg-2o-heO">
+                                                <connections>
+                                                    <action selector="next:" destination="cSW-Ep-mxb" id="NPO-Yi-7hr"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="hAn-g3-Eto"/>
+                                            <barButtonItem title="Next" id="fGV-8y-izz">
+                                                <connections>
+                                                    <action selector="next:" destination="cSW-Ep-mxb" id="qEH-SR-rRE"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jhb-67-gPU" secondAttribute="trailing" id="0SW-Ms-qyH"/>
-                            <constraint firstItem="zJf-aP-j5G" firstAttribute="leading" secondItem="blF-Ph-xnc" secondAttribute="leading" id="Kum-Uv-GnW"/>
-                            <constraint firstItem="jhb-67-gPU" firstAttribute="top" secondItem="5gi-xb-b9L" secondAttribute="bottom" id="PXi-vj-UAQ"/>
-                            <constraint firstItem="jhb-67-gPU" firstAttribute="leading" secondItem="blF-Ph-xnc" secondAttribute="leading" id="ebW-Hm-Zc6"/>
-                            <constraint firstAttribute="trailing" secondItem="zJf-aP-j5G" secondAttribute="trailing" id="fUO-Nx-TWn"/>
-                            <constraint firstAttribute="bottom" secondItem="zJf-aP-j5G" secondAttribute="bottom" id="wJe-gO-ue7"/>
+                            <constraint firstItem="O69-kQ-AWl" firstAttribute="leading" secondItem="blF-Ph-xnc" secondAttribute="leading" id="0aH-rV-u9y"/>
+                            <constraint firstAttribute="bottom" secondItem="O69-kQ-AWl" secondAttribute="bottom" id="MJg-cO-oSY"/>
+                            <constraint firstAttribute="trailing" secondItem="O69-kQ-AWl" secondAttribute="trailing" id="epu-Iv-Dn1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="last" destination="RVg-2o-heO" id="sPE-rA-FJp"/>
+                        <outlet property="next" destination="fGV-8y-izz" id="wlu-eV-b39"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51l-wP-YIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

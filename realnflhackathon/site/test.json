@@ -1,0 +1,61 @@
+{
+  "gameId": 2015020100,
+  "ngsPlayId": 5,
+  "play": {
+    "playDescription": "14:54) T. Gurley left tackle to SL 49 for 6 yards ( T.McDaniel; D. Lansanah)",
+    "playType": "play_type_pass",
+    "quarter": 1,
+    "down": 1,
+    "yardsToGo": 10,
+    "possessionTeamId": "0650",
+    "gameClock": "string",
+    "yardline": "string",
+    "yardlineNumber": 5,
+    "absoluteYardlineNumber": 15,
+    "timeOfDayUTC": "5:34",
+    "isSTPlay": true,
+    "isPenalty": false,
+    "isScoring": false,
+    "isGoalToGo": true,
+    "playStats": [
+      {
+        "nflId": 831,
+        "playerName": "Tom Brady",
+        "jerseyNumber": 5,
+        "statId": 15,
+        "yards": 0
+      }
+    ]
+  },
+  "schedule": {
+    "season": 2015,
+    // "seasonType": "string",
+    "week": 5,
+    "gameId": 1,
+    "gameDate": "string",
+    "gameTimeEastern": "string",
+    "gameTimeLocal": "string",
+    "isoTime": number,
+    "homeTeamId": "string",
+    "visitorTeamId": "string",
+    "homeTeamAbbr": "string",
+    "visitorTeamAbbr": "string",
+    "gameType": "string",
+"visitorTeam": {
+      "season": number,
+      "teamId": "string",
+      "abbr": "string",
+      "cityState": "string",
+      "fullName": "string",
+      "nick": "string",
+},
+    "homeTeam": {
+      "season": number,
+      "teamId": "string",
+      "abbr": "string",
+      "cityState": "string",
+      "fullName": "string",
+      "nick": "string",
+    },
+ },
+}

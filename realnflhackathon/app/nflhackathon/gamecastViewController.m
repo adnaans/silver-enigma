@@ -7,23 +7,70 @@
 //
 
 #import "gamecastViewController.h"
+#import <Firebase/Firebase.h>
 
-@interface gamecastViewController ()
+@interface gamecastViewController (){
+    
+    __weak IBOutlet UIBarButtonItem *last;
+    __weak IBOutlet UIBarButtonItem *next;
+}
 
 @end
 
 @implementation gamecastViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+@synthesize file;
+
+- (IBAction)next:(id)sender {
     if(_indexcheck == 0){
-        NSLog(@"derpherpderp");
+        if(file == 840){
+            next.enabled = NO;
+        }
+        else{
+            file = file +5;
+        }
     }
-    else if (_indexcheck == 1){
-        NSLog(@"derpherp");
+    else if(_indexcheck == 1){
+        if (file == 915){
+            next.enabled = NO;
+        }
+        else{
+            file = file +5;
+        }
     }
     else{
-        NSLog(@"same");
+        if(file == 965){
+            next.enabled = NO;
+        }
+        else{
+            file = file+5;
+        }
+    }
+}
+
+
+- (IBAction)last:(id)sender {
+    if(file == 0){
+        last.enabled = NO;
+    }
+    else{
+        file = file-5;
+    }
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [[[[Firebase alloc] initWithUrl:@"https:/ /nflhackathonthing.firebaseio.com"] childByAppendingPath:@"file"] setValue:[NSNumber numberWithInt:file]];
+
+    if(_indexcheck == 0){
+        // use game 1 data
+    }
+    else if (_indexcheck == 1){
+        // use game 2 data
+    }
+    else{
+        //use game 3 data
     }
     // Do any additional setup after loading the view.
 }
