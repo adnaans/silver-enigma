@@ -100,31 +100,82 @@ int file=0;
 //        [self drawPath:xlocation,ylocation];
     }];
 
-    
+
     if(_indexcheck == 0){
         [[ref queryOrderedByChild:@"game1"]
          observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
             NSLog(@"They're doing %@ meters", snapshot.value);
             NSLog(@"%@", snapshot.value);
-            float x = [snapshot.value[@"x"] floatValue];
-            float y = [snapshot.value[@"y"] floatValue];
+             float x = 5.3;
+             float y = 4.6;
+            NSArray*ref1;
+
+//            float x = [snapshot.value[@"x"] floatValue];
+//            float y = [snapshot.value[@"y"] floatValue];
              //         time.text = (@"%@", snapshot.value[@"time"]);
-            UIBezierPath *path = [UIBezierPath bezierPath];
-            [path moveToPoint:CGPointMake(50, startingline)];
-            [path addLineToPoint:CGPointMake(x, y)];
-                 
-            CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-            shapeLayer.path = [path CGPath];
-            shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
-            shapeLayer.lineWidth = 2.0;
-            shapeLayer.fillColor = [[UIColor clearColor] CGColor];
-                 
-            [self.view.layer addSublayer:shapeLayer];
-                 
+//            ref1 = [snapshot.value[@"nflID"] readDataToEndOfFile];
+             NSMutableArray *nflIDCollection = [[NSMutableArray alloc] init];
+            for(int index=0;index <= 11; index++){
+                [nflIDCollection addObject:snapshot.value[@"nflID"]];
+
+                nflIDCollection[index] = snapshot.value[@"nflID"];
+            [[ref queryOrderedByChild:@"team1"]observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot){
+                for(int index=0;index<=nflIDCollection.count;index++){
+                    snapshot.value[@"nflID"] = nflIDCollection[index];
+//                  nflIDCollection[index] = snapshot.value[@"position"];
+                    UIBezierPath *path = [UIBezierPath bezierPath];
+//                    float x = [snapshot.value[@"x"]floatValue];
+//                    float y = [snapshot.value[@"y"]floatValue];
+                    
+                    [path moveToPoint:CGPointMake(30, startingline)];
+//                    [path addLineToPoint:CGPointMake(x, y)];
+                    
+                    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+                    shapeLayer.path = [path CGPath];
+                    shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
+                    shapeLayer.lineWidth = 2.0;
+                    shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+                    
+                    [self.view.layer addSublayer:shapeLayer];
+
+                    }
+                }
+            ];
+            }
+            
+             
             UIImage* image = [UIImage imageNamed:@"miniUniform"];
-            UIImageView* miniJersey = [[UIImageView alloc] initWithFrame:CGRectMake(50, 100.0, 50, 30)];
+            UIImageView* miniJersey = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 100, 100)];
             miniJersey.image = image;
             [self.view addSubview:miniJersey];
+            
+            
+             
+//        [[ref queryOrderedByChild:@"team1"]observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot){
+//            NSArray* team1 = [snapshot.value[@"nflID"] readDataToEndOfFile];
+//            for(int index1 = 0; index1<=team1.count; index1++){
+//                for(int index2 = 0; index2<= team1.count; index2++){
+//                    if(ref1[index1] == team1[index2]){
+//                        NSArray *teammembers;
+//                        teammembers[index1] =team1[index1];
+//                    }
+//                }
+//            }
+//        }];
+//        
+//        [[ref queryOrderedByChild:@"team2"]observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot){
+//            NSArray* team2 = [snapshot.value[@"nflID"] readDataToEndOfFile];
+//            for(int index1 = 0; index1<=team2.count; index1++){
+//                for(int index2 = 0; index2<= team2.count; index2++){
+//                    if(ref1[index1] == team2[index2]){
+//                        NSArray *teammembers;
+//                        teammembers[index1] =[team2 objectAtIndex:index1];
+//                    }
+//                }
+//            }
+//
+//            
+//        }];
          }];
 
     }
@@ -161,7 +212,7 @@ int file=0;
              NSLog(@"%@", snapshot.value);
              float x = [snapshot.value[@"x"] floatValue];
              float y = [snapshot.value[@"y"] floatValue];
-             //         time.text = (@"%@", snapshot.value[@"time"]);
+             //time.text = (@"%@", snapshot.value[@"time"]);
              UIBezierPath *path = [UIBezierPath bezierPath];
              [path moveToPoint:CGPointMake(50, startingline)];
              [path addLineToPoint:CGPointMake(x, y)];
@@ -183,6 +234,34 @@ int file=0;
     }
     // Do any additional setup after loading the view.
 }
+
+
++(UIImage*)drawFront:(UIImage*)image text:(NSString*)text atPoint:(CGPoint)point
+{
+    UIFont *font = [UIFont fontWithName:@"Halter" size:21];
+    UIGraphicsBeginImageContext(image.size);
+    [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+    CGRect rect = CGRectMake(point.x, (point.y - 5), image.size.width, image.size.height);
+    [[UIColor whiteColor] set];
+    
+    NSMutableAttributedString* attString = [[NSMutableAttributedString alloc] initWithString:text];
+    NSRange range = NSMakeRange(0, [attString length]);
+    
+    [attString addAttribute:NSFontAttributeName value:font range:range];
+    [attString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:range];
+    
+    NSShadow* shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor darkGrayColor];
+    shadow.shadowOffset = CGSizeMake(1.0f, 1.5f);
+    [attString addAttribute:NSShadowAttributeName value:shadow range:range];
+    
+    [attString drawInRect:CGRectIntegral(rect)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 
 - (BOOL)isModal {
     return self.presentingViewController.presentedViewController == self
