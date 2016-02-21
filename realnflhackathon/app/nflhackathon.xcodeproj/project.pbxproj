@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		0A6B26221C790ADF00E5CE41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B26211C790ADF00E5CE41 /* main.m */; };
 		0A6B26251C790ADF00E5CE41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B26241C790ADF00E5CE41 /* AppDelegate.m */; };
-		0A6B26281C790ADF00E5CE41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B26271C790ADF00E5CE41 /* ViewController.m */; };
 		0A6B262B1C790ADF00E5CE41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B26291C790ADF00E5CE41 /* Main.storyboard */; };
 		0A6B262D1C790ADF00E5CE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B262C1C790ADF00E5CE41 /* Assets.xcassets */; };
 		0A6B26301C790ADF00E5CE41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B262E1C790ADF00E5CE41 /* LaunchScreen.storyboard */; };
 		0A6B263B1C790ADF00E5CE41 /* nflhackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B263A1C790ADF00E5CE41 /* nflhackathonTests.m */; };
 		0A6B26461C790ADF00E5CE41 /* nflhackathonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B26451C790ADF00E5CE41 /* nflhackathonUITests.m */; };
-		0A6B26551C790C2A00E5CE41 /* alertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B26541C790C2A00E5CE41 /* alertViewController.m */; };
+		0A6B26571C7916F000E5CE41 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B26561C7916F000E5CE41 /* CoreMotion.framework */; };
+		0A6B26591C7916F800E5CE41 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B26581C7916F800E5CE41 /* AVFoundation.framework */; };
+		0A6B265B1C791E6000E5CE41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B265A1C791E6000E5CE41 /* MapKit.framework */; };
+		0A6B265E1C791F8600E5CE41 /* tableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B265D1C791F8600E5CE41 /* tableViewController.m */; };
+		0A7FE7671C792B8200200691 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FE7661C792B8200200691 /* TableViewCell.m */; };
+		0A7FE76A1C7930C500200691 /* gamecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FE7691C7930C500200691 /* gamecastViewController.m */; };
 		9334AE8ADA1486A76D3DB19D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FA17A157476197CAAF6E00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +45,6 @@
 		0A6B26211C790ADF00E5CE41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A6B26231C790ADF00E5CE41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A6B26241C790ADF00E5CE41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0A6B26261C790ADF00E5CE41 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0A6B26271C790ADF00E5CE41 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0A6B262A1C790ADF00E5CE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A6B262C1C790ADF00E5CE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A6B262F1C790ADF00E5CE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,8 +55,15 @@
 		0A6B26411C790ADF00E5CE41 /* nflhackathonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nflhackathonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6B26451C790ADF00E5CE41 /* nflhackathonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nflhackathonUITests.m; sourceTree = "<group>"; };
 		0A6B26471C790ADF00E5CE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A6B26531C790C2A00E5CE41 /* alertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alertViewController.h; sourceTree = "<group>"; };
-		0A6B26541C790C2A00E5CE41 /* alertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alertViewController.m; sourceTree = "<group>"; };
+		0A6B26561C7916F000E5CE41 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		0A6B26581C7916F800E5CE41 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0A6B265A1C791E6000E5CE41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A6B265C1C791F8600E5CE41 /* tableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewController.h; sourceTree = "<group>"; };
+		0A6B265D1C791F8600E5CE41 /* tableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableViewController.m; sourceTree = "<group>"; };
+		0A7FE7651C792B8200200691 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
+		0A7FE7661C792B8200200691 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
+		0A7FE7681C7930C500200691 /* gamecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gamecastViewController.h; sourceTree = "<group>"; };
+		0A7FE7691C7930C500200691 /* gamecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gamecastViewController.m; sourceTree = "<group>"; };
 		48FA17A157476197CAAF6E00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AF7F15689BC34A13726A6F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C0783D067BCDD3C8E7AC1C3B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6B265B1C791E6000E5CE41 /* MapKit.framework in Frameworks */,
+				0A6B26591C7916F800E5CE41 /* AVFoundation.framework in Frameworks */,
+				0A6B26571C7916F000E5CE41 /* CoreMotion.framework in Frameworks */,
 				9334AE8ADA1486A76D3DB19D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,11 +125,13 @@
 			children = (
 				0A6B26231C790ADF00E5CE41 /* AppDelegate.h */,
 				0A6B26241C790ADF00E5CE41 /* AppDelegate.m */,
-				0A6B26261C790ADF00E5CE41 /* ViewController.h */,
-				0A6B26271C790ADF00E5CE41 /* ViewController.m */,
 				0A6B26291C790ADF00E5CE41 /* Main.storyboard */,
-				0A6B26531C790C2A00E5CE41 /* alertViewController.h */,
-				0A6B26541C790C2A00E5CE41 /* alertViewController.m */,
+				0A7FE7681C7930C500200691 /* gamecastViewController.h */,
+				0A7FE7691C7930C500200691 /* gamecastViewController.m */,
+				0A6B265C1C791F8600E5CE41 /* tableViewController.h */,
+				0A6B265D1C791F8600E5CE41 /* tableViewController.m */,
+				0A7FE7651C792B8200200691 /* TableViewCell.h */,
+				0A7FE7661C792B8200200691 /* TableViewCell.m */,
 				0A6B262C1C790ADF00E5CE41 /* Assets.xcassets */,
 				0A6B262E1C790ADF00E5CE41 /* LaunchScreen.storyboard */,
 				0A6B26311C790ADF00E5CE41 /* Info.plist */,
@@ -164,6 +178,9 @@
 		C333355A4A4673F847D135D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A6B265A1C791E6000E5CE41 /* MapKit.framework */,
+				0A6B26581C7916F800E5CE41 /* AVFoundation.framework */,
+				0A6B26561C7916F000E5CE41 /* CoreMotion.framework */,
 				48FA17A157476197CAAF6E00 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -350,10 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6B26281C790ADF00E5CE41 /* ViewController.m in Sources */,
 				0A6B26251C790ADF00E5CE41 /* AppDelegate.m in Sources */,
 				0A6B26221C790ADF00E5CE41 /* main.m in Sources */,
-				0A6B26551C790C2A00E5CE41 /* alertViewController.m in Sources */,
+				0A7FE7671C792B8200200691 /* TableViewCell.m in Sources */,
+				0A6B265E1C791F8600E5CE41 /* tableViewController.m in Sources */,
+				0A7FE76A1C7930C500200691 /* gamecastViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

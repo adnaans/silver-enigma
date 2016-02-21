@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tableViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface gamecastViewController : UIViewController
+@property (strong, nonatomic) tableViewController *indexcheck;
 
 @end
-
