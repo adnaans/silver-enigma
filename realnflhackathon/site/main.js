@@ -1,33 +1,8 @@
-var myFirebaseRef = new Firebase("https://nflhackathonthing.firebaseio.com/");
-myFirebaseRef.child("concussion").on("value", function(snapshot)){
+Firebase = require("firebase")
+var json = '{"result":true,"count":1}',
+obj = JSON.parse(json);
+var rootRef = new Firebase('https://silver-enigma.firebaseio.com/ghana.json');
 
-}
-
-
-[
-  {
-    "season": number,
-    "week": number,
-    "teamId": "string",
-    "team": {
-     "abbr": "string",
-      "cityState": "string",
-      "fullName": "string",
-      "nick": "string",
-     }
-},
-    "teamPlayers": [
-      {
-        "nflId": number,
-        "displayName": "string",
-        "firstName": "string",
-        "lastName": "string",
-        "positionGroup": "string",
-        "position": "string",
-        "jerseyNumber": number,
-        "height": "string",
-        "weight": number,
-      }
-    ]
-  }
-]
+rootRef.set({
+      "Joe":"Seph"
+ });
