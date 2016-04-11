@@ -91,6 +91,7 @@ int file=0;
     [super viewDidLoad];
     
 //    miniUniform.alpha = 0;
+<<<<<<< HEAD
     Firebase *ref = [[Firebase alloc] initWithUrl: @"https://nflhackathonthingy.firebaseio.com"];
 
     [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
@@ -181,6 +182,34 @@ int file=0;
          }];
 
     }
+=======
+    
+    [[[[Firebase alloc] initWithUrl:@"https://nflhackathonthingy.firebaseio.com"] childByAppendingPath:@"file"] setValue:[NSNumber numberWithInt:file]];
+    Firebase *myRootRef;
+    float x, y;
+
+    bool isModal;
+    
+    while(isModal == true){
+        [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+            
+            __block x = [snapshot.value[@"x"] floatValue];
+            __block y = [snapshot.value[@"y"] floatValue];
+        }];
+        
+        NSLog(@"BAHAHBHAHBAHABHABHABH %.2f",x);
+        NSLog(@"%.2f",y);
+        
+        [self drawPath:x,y];
+    }
+
+    
+    
+    if(_indexcheck == 0){
+
+    }
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
     else if (_indexcheck == 1){
         [[ref queryOrderedByChild:@"game2"]
          observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
@@ -237,6 +266,7 @@ int file=0;
     // Do any additional setup after loading the view.
 }
 
+<<<<<<< HEAD
 
 +(UIImage*)drawFront:(UIImage*)image text:(NSString*)text atPoint:(CGPoint)point
 {
@@ -265,6 +295,8 @@ int file=0;
 }
 
 
+=======
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
 - (BOOL)isModal {
     return self.presentingViewController.presentedViewController == self
     || (self.navigationController != nil && self.navigationController.presentingViewController.presentedViewController == self.navigationController)
@@ -273,6 +305,7 @@ int file=0;
 
 -(void)animateStrokeEnd:(CGFloat)_strokeEnd {
 
+<<<<<<< HEAD
 }
 int count;
 
@@ -290,6 +323,8 @@ int count;
     int myInt = [*number intValue];
     // do stuff with myInt
     *number = [NSNumber numberWithInt:myInt];
+=======
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
 }
 
 
@@ -306,13 +341,21 @@ int count;
     [[ref queryOrderedByChild:@"derp/gsisPlayId"]
      observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
          NSLog(@"They're doing %@ meters", snapshot.value);
+<<<<<<< HEAD
          NSLog(@"%@", snapshot.value);
+=======
+         NSLog(@"%@", snapshot.value[@"title"]);
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
 
 //         time.text = (@"%@", snapshot.value[@"time"]);
          for(int index = 0; index<=numberofplayer; index++){
              UIBezierPath *path = [UIBezierPath bezierPath];
              [path moveToPoint:CGPointMake(50, startingline)];
              [path addLineToPoint:CGPointMake(xlocation, ylocation)];
+<<<<<<< HEAD
+=======
+//             [path addLineToPoint:CGPointMake(x, y)];
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
              
              CAShapeLayer *shapeLayer = [CAShapeLayer layer];
              shapeLayer.path = [path CGPath];
@@ -328,6 +371,12 @@ int count;
              [self.view addSubview:miniJersey];
          }
      }];
+<<<<<<< HEAD
+=======
+    
+    
+    
+>>>>>>> 97f3c3eda5785d34a52a54946640d8d30943389a
 }
 
 
